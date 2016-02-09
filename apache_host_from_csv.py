@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from csv import DictReader
 
 servername = 'my_virtualhost_name.com'
