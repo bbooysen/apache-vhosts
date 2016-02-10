@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Business supplies a CSV file with any number of URLs in the first column, destination(s) in following columns.
+This script creates a complete Apache2 virtualhost based on the CSV file.
+"""
+
 from csv import DictReader
 
 servername = 'my_virtualhost_name.com'
