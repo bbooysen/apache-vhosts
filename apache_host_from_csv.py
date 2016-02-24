@@ -39,9 +39,9 @@ wonkylinks.write('These point to URLs containing "///"' + '\n' + '\n')
 for line in inputfile:
     if '///' not in line['abstract-view']:
         # Create rules, drop query strings, permanent redirect, [L]ast rule to check
-        resultsfile.write('  RewriteRule ' + '^/doi/abs/' + line['doi'] + ' ' + line['abstract-view'] + '?' +  ' [R=301,L]' + '\n')
-        resultsfile.write('  RewriteRule ' + '^/doi/pdf/' + line['doi'] + ' ' + line['pdf-view'] + '?' +  ' [R=301,L]' + '\n')
-        resultsfile.write('  RewriteRule ' + '^/doi/ref/' + line['doi'] + ' ' + line['references'] + '?' + ' [R=301,L]' + '\n')
+        resultsfile.write('  RewriteRule ' + '^/doi/abs/' + line['doi'] + '$' + ' ' + line['abstract-view'] + '?' +  ' [R=301,L]' + '\n')
+        resultsfile.write('  RewriteRule ' + '^/doi/pdf/' + line['doi'] + '$' + ' ' + line['pdf-view'] + '?' +  ' [R=301,L]' + '\n')
+        resultsfile.write('  RewriteRule ' + '^/doi/ref/' + line['doi'] + '$' + ' ' + line['references'] + '?' + ' [R=301,L]' + '\n')
         
         # User-readable list of rules by source, destination
         readableoutput.write(originaldomain + '/doi/abs/' + line['doi'] + ',' + line['abstract-view'] + '\n')
